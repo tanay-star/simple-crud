@@ -15,7 +15,9 @@ const EditForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    props.updateNote(note)
+    if (note.text) {
+      props.updateNote(note)
+    }
   }
 
   return (

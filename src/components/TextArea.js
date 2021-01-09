@@ -21,12 +21,14 @@ const TextArea = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    props.addNote(note)
-    setNote({
-      ...note,
-      id: 0,
-      text: '',
-    })
+    if (note.text) {
+      props.addNote(note)
+      setNote({
+        ...note,
+        id: 0,
+        text: '',
+      })
+    }
   }
 
   return (
